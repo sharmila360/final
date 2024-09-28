@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2A7z4jZqPAaHm0hgzRZCZsY5PoZt9NHPD5Ulg" crossorigin="anonymous">
+    
+    <title>Sharmi Portfolio</title>
+
+
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio</div> 
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home"  class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#project" class="nav-item">Projects</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menu-btn">
+                &#9776; <!-- Hamburger Menu Icon -->
+              </div>
+
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="left-content"><br><br>
+                <h1><span>Sharmila Devi</span></h1>
+                <p class="profession">Aspiring Web Developer</p>
+                <p class="welcome-note">Welcome to my portfolio website! I am passionate about web development and design, with a focus on creating responsive and user-friendly interfaces. Have a look at my projects and feel free to reach out for any collaboration!</p>
+                <section class="social-icons">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40"></a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40"></a>
+                </section>
+            </div>
+            <div class="right-content">
+                <img src="sharmi1.jpg" alt="Profile Picture" class="profile-img">
+               
+              
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <br><br><br>
+        <h2>About Me</h2>
+        <img src="sharmi1.jpg"  alt="About Me" class="about-img"> 
+        <p>Hi, I'm <strong>Sharmila Devi</strong>, a passionate Front-End Developer who loves crafting beautiful,responsive, and user-friendly websites.</p>
+        <p> I have a strong foundation in HTML, CSS, and JavaScript, with experience in using modern frameworks like React. My goal is to
+        <p>create seamless and engaging web experiences that meet the needs of users and clients.</p>
+        <p>I enjoy solving complex problems and am always eager to learn new technologies. When I'm not coding, you can find me </p>
+        <p>exploring design trends, reading tech blogs, or contributing to open-source projects.</p>
+        
+        <p>If you're looking for a developer who is dedicated, detail-oriented, and excited about web development, feel free to connect with me!</p><br><br>
+        <a href="resume.pdf" download="Sharmila_Devi_CV"  class="btn" >Download CV</a>   
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <br><br><br>
+        <h2>Skills</h2>
+        <div class="skills-bar-container">
+            <div class="skills-bar">
+                <span style="width: 80%">HTML - 80%</span> 
+            </div>
+            <div class="skills-bar">
+                <span style="width: 75%">CSS - 75%</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 70%">JavaScript - 70%</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 85%">GIT - 85%</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 65%">Web Design - 65%</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="project" class="section projects-section">
+        <br><br><br>
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="pro1.PNG" alt="no img" srcset="">
+                <h3>Food Wastage Reduction Application</h3>
+                <p>Developed a web application using PHP as the backend and HTML, CSS and Javascript as front end</p>
+            </div>
+            <div class="project-card">
+                <img src="pro2.png" alt="no img" srcset="">
+                <h3>Online Shopping Website  </h3>
+                <p>Created a Simple Shopping website. It demonstrates my proficiency in front-end development and design.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <section id="contact" class="section contact-section">
+        <br><br><br>
+        <h2>Contact</h2>
+        <form onblur="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" onblur="validateName()"><br>
+                <span id="nameError" class="error"></span><br>
+        
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" onblur="validateEmail()"><br>
+                <span id="emailError" class="error"></span><br>
+        
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" onblur="validateMessage()"></textarea><br>
+                <span id="messageError" class="error"></span><br>
+            </div>
+            <button type="submit" class="btn" id="sub" onclick="val()">Send Message</button>
+        </form>
+    </section>
+    <script>
+function validateName() {
+    const name = document.getElementById('name').value;
+    const nameError = document.getElementById('nameError');
+    
+    if (name === "") {
+        nameError.innerText = 'Name is required.';
+        nameError.classList.add('error');
+        return false;
+    } else {
+        nameError.classList.remove('error');
+        nameError.classList.add('valid');
+        return true;
+    }
+}
+
+// Email validation
+function validateEmail() {
+    const email = document.getElementById('email').value;
+    const emailError = document.getElementById('emailError');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (email === "") {
+        emailError.innerText = 'Email is required.';
+        emailError.classList.add('error');
+        return false;
+    } else if (!emailPattern.test(email)) {
+        emailError.innerText = 'Please enter a valid email address.';
+        emailError.classList.add('error');
+        return false;
+    } else {
+        emailError.classList.remove('error');
+        emailError.classList.add('valid');
+        return true;
+    }
+}
+
+// Message validation
+function validateMessage() {
+    const message = document.getElementById('message').value;
+    const messageError = document.getElementById('messageError');
+    
+    if (message === "") {
+        messageError.innerText = 'Message is required.';
+        messageError.classList.add('error');
+        return false;
+    } else {
+        messageError.innerText = 'Message looks good!';
+        messageError.classList.remove('error');
+        messageError.classList.add('valid');
+        return true;
+    }
+}
+
+     // Toggle the navbar when the menu button is clicked
+document.getElementById('menu-btn').addEventListener('click', function() {
+  var navLinks = document.getElementById('nav-links');
+  navLinks.classList.toggle('show');
+});
+
+// Hide the navbar after clicking a nav item
+var navItems = document.querySelectorAll('.nav-item');
+navItems.forEach(function(item) {
+  item.addEventListener('click', function() {
+    var navLinks = document.getElementById('nav-links');
+    navLinks.classList.remove('show');
+  });
+});
+
+    document.getElementById('sub').addEventListener('click', function() {
+        alert("Your message has been sent")
+    })
+
+
+
+      </script>
+</body>
+</html>
